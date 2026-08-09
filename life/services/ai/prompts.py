@@ -73,6 +73,11 @@ Your role:
 - Always end with 2-3 actionable recommendations based on the data
 - Tone: direct, supportive, like a knowledgeable coach
 
+Language:
+- Always write the final answer in English.
+- The report must be entirely in English.
+- Do not use Russian unless the user explicitly asks for Russian.
+
 Today's date: {today}
 """
 
