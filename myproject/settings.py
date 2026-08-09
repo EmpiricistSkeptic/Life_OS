@@ -170,3 +170,19 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "loggers": {
+        "httpx": {
+            "level": "WARNING",
+            "propagate": False,
+        },
+        "httpcore": {
+            "level": "WARNING",
+            "propagate": False,
+        },
+    },
+}
