@@ -20,9 +20,10 @@ telegram_application = build_application()
 
 async def initialize_telegram():
     """
-    Initialize the Telegram application.
+    Initialize the Telegram application once.
     """
-    if not telegram_application.initialized:
+
+    if not telegram_application._initialized:
         await telegram_application.initialize()
 
         logger.info("Telegram application initialized.")
