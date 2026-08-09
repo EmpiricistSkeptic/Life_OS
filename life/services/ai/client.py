@@ -69,6 +69,9 @@ def _build_payload(
         ],
         "max_tokens":  max_tokens,
         "temperature": temperature,
+        "thinking": {
+            "type": "disabled"
+        },
         "stream":      stream,
     }
 
