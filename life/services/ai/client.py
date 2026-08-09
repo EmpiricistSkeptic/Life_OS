@@ -159,6 +159,15 @@ def call_deepseek(
                 f"[AI] Success — model={model}, "
                 f"tokens={data.get('usage', {}).get('total_tokens', '?')}"
             )
+            logger.info(
+                "[AI] Response content length: %d",
+                len(text) if text else 0,
+            )
+
+            logger.info(
+                "[AI] Response preview: %r",
+                text[:300] if text else text,
+            )
             return text.strip()
         except (KeyError, IndexError) as e:
             last_error = f"Unexpected response structure: {e} — {data}"

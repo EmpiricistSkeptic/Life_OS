@@ -253,7 +253,7 @@ def generate_monthly_auto_report(user) -> str:
     prompt = monthly_auto_report_prompt(
         all_domains_current = ctx["current"],
         all_domains_previous = ctx["previous"],
-        month_label = ["current_label"],
+        month_label = ctx["current_label"],
     )
     return call_with_prompt(prompt, max_tokens=1200, temperature=0.6)
 
