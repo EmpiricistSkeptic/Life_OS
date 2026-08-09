@@ -12,6 +12,7 @@ from .views import (
     UserGoalModelViewSet,
     AIAssistantView
 )
+from .views_telegram import telegram_webhook
 router = DefaultRouter()
 
 router.register(r"category", CategoryModelViewset, basename="category")
@@ -27,4 +28,5 @@ urlpatterns = [
     path("logout/", LogoutAPIView.as_view(), name="logout"),
     path("domain-templates/<slug:slug>/", DomainTemplateAPIView.as_view(), name="domain-template"),
     path("ai/report/", AIAssistantView.as_view(), name="ai-report"),
+    path("telegram/webhook/<str:secret_path>/", telegram_webhook, name="telegram-webhook")
 ]

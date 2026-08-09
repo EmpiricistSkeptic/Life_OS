@@ -18,4 +18,6 @@ RUN pip install --upgrade pip \
 
 COPY . .
 
-CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+RUN chmod +x start.sh
+
+CMD ["sh", "start.sh"]
